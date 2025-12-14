@@ -7,72 +7,73 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header class="header">
         <h1><i class="fas fa-window-restore"></i> Мастерская модальных окон</h1>
-        <p class="subtitle">Выберите задачу и реализуйте её с помощью JavaScript.</p>
+        <p class="subtitle">Решил я короче попрактиковаться с модалками в JavaScript.</p>
     </header>
 
     <main class="container">
         <section class="tasks">
             <h2><i class="fas fa-tasks"></i> Список задач</h2>
             <div class="task-list">
-                <!-- Задача 1 -->
+                <!-- Окно 1 -->
                 <div class="task-card" id="task-1">
                     <div class="task-header">
                         <span class="task-number">01</span>
                         <h3>Базовое модальное окно</h3>
                     </div>
-                    <p class="task-description">Создайте простое модальное окно, которое открывается по нажатию кнопки и закрывается по клику на крестик.</p>
+                    <p class="task-description">Создал простое модальное окно, которое открывается по нажатию кнопки и закрывается по клику на крестик.</p>
                     <button class="task-button open-modal-btn" data-modal-target="#basicModal">
                         <i class="fas fa-external-link-alt"></i> Запустить окно
                     </button>
                 </div>
 
-                <!-- Задача 2 -->
+                <!-- Окно 2 -->
                 <div class="task-card" id="task-2">
                     <div class="task-header">
                         <span class="task-number">02</span>
                         <h3>Окно с фоном-оверлеем</h3>
                     </div>
-                    <p class="task-description">Модальное окно должно открываться с затемнённым фоном (оверлеем), который также закрывает окно при клике на него.</p>
+                    <p class="task-description">Модальное окно открывается с затемнённым фоном (оверлеем), который также закрывает окно при клике на него.</p>
                     <button class="task-button open-modal-btn" data-modal-target="#overlayModal">
                         <i class="fas fa-external-link-alt"></i> Запустить окно
                     </button>
                 </div>
 
-                <!-- Задача 3 -->
+                <!-- Окно 3 -->
                 <div class="task-card" id="task-3">
                     <div class="task-header">
                         <span class="task-number">03</span>
                         <h3>Окно с анимацией</h3>
                     </div>
-                    <p class="task-description">Реализуйте плавное появление и скрытие модального окна с использованием анимации (например, fade-in и scale).</p>
+                    <p class="task-description">Реализовано плавное появление и скрытие модального окна с использованием анимации.</p>
                     <button class="task-button open-modal-btn" data-modal-target="#animatedModal">
                         <i class="fas fa-external-link-alt"></i> Запустить окно
                     </button>
                 </div>
 
-                <!-- Задача 4 -->
+                <!-- Окно 4 -->
                 <div class="task-card" id="task-4">
                     <div class="task-header">
                         <span class="task-number">04</span>
                         <h3>Закрытие по клавише Escape</h3>
                     </div>
-                    <p class="task-description">Добавьте возможность закрывать активное модальное окно нажатием клавиши Escape на клавиатуре.</p>
+                    <p class="task-description">Добавлена возможность закрывать активное модальное окно нажатием клавиши Escape на клавиатуре.</p>
                     <button class="task-button open-modal-btn" data-modal-target="#escapeModal">
                         <i class="fas fa-external-link-alt"></i> Запустить окно
                     </button>
                 </div>
 
-                <!-- Задача 5 -->
+                <!-- Окно 5 -->
                 <div class="task-card" id="task-5">
                     <div class="task-header">
                         <span class="task-number">05</span>
                         <h3>Модальное окно с формой</h3>
                     </div>
-                    <p class="task-description">Создайте модальное окно, содержащее форму. При нажатии на кнопку "Отправить" окно должно закрываться, а данные выводиться в консоль.</p>
+                    <p class="task-description">Создано модальное окно, содержащее форму. При нажатии на кнопку "Отправить" окно должно закрываться, а данные выводиться в консоль.</p>
                     <button class="task-button open-modal-btn" data-modal-target="#formModal">
                         <i class="fas fa-external-link-alt"></i> Запустить окно
                     </button>
@@ -81,64 +82,63 @@
         </section>
 
         <div class="hint">
-            <p><strong>Подсказка по реализации:</strong> Все кнопки для открытия имеют класс <code>open-modal-btn</code> и атрибут <code>data-modal-target</code> с селектором нужного модального окна. Структура самих окон находится в конце body.</p>
-            <p><i class="fas fa-lightbulb"></i> Не редактируйте HTML и CSS для выполнения задач. Вся логика пишется в отдельном JS-файле.</p>
+            <p>Коллеги, давайте без лишнего пафоса: модальное окно — это та самая картинка с парнем, который тыкает палкой в кнопку «Закрыть», в то время как само окно орет «Хей, я тебя спрашивал!» и блокирует весь контент. Его логика проста: «Я исчезну, только когда ты найдешь невидимый крестик или продашь мне душу в виде подписки, а иначе мы оба так просто с этого сайта не выйдем»..</p>
         </div>
     </main>
 
     <!-- ========== СТРУКТУРА МОДАЛЬНЫХ ОКОН ========== -->
-    <!-- Задача 1: Базовое окно -->
+    <!-- Базовое окно -->
     <div class="modal" id="basicModal">
         <div class="modal-content">
             <button class="modal-close-btn"><i class="fas fa-times"></i></button>
             <h2><i class="fas fa-star"></i> Базовое окно</h2>
-            <p>Это простое модальное окно. Реализуйте его открытие по нажатию кнопки и закрытие по крестику.</p>
+            <p>Это простое модальное окно.</p>
             <div class="modal-footer">
-                <p>Отлично! Первый шаг к мастерству.</p>
+                <p>Саааау, я окно, хоть и простое, но свежее</p>
             </div>
         </div>
     </div>
 
-    <!-- Задача 2: Окно с оверлеем -->
+    <!-- Окно с оверлеем -->
     <div class="modal" id="overlayModal">
         <div class="modal-overlay"></div>
         <div class="modal-content">
             <button class="modal-close-btn"><i class="fas fa-times"></i></button>
             <h2><i class="fas fa-layer-group"></i> Окно с оверлеем</h2>
-            <p>Это окно должно открываться с тёмным фоном (оверлеем) позади. Клик на оверлей также должен закрывать окно.</p>
+            <p>Йоу, я ниндзя</p>
             <div class="modal-footer">
-                <p>Оверлей — это полупрозрачный слой <code>.modal-overlay</code>.</p>
+                <p>Теперь на фоне все затуманено </p>
             </div>
         </div>
     </div>
 
-    <!-- Задача 3: Анимированное окно -->
-    <div class="modal" id="animatedModal">
+    <!-- Анимированное окно -->
+    <div class="modal_anim" id="animatedModal">
         <div class="modal-overlay"></div>
         <div class="modal-content">
             <button class="modal-close-btn"><i class="fas fa-times"></i></button>
             <h2><i class="fas fa-magic"></i> Анимированное окно</h2>
-            <p>Это окно должно появляться и исчезать плавно, с анимацией. Попробуйте использовать CSS-классы для анимации.</p>
+            <p>Это окно должно появляться и исчезать плавно, с анимацией.</p>
             <div class="modal-footer">
-                <p>Можно анимировать opacity и transform. Подумайте о добавлении/удалении класса, например, <code>.modal--active</code>.</p>
+                <p>Аниме - нет, АНИМАЦИЯ</p>
             </div>
         </div>
     </div>
 
-    <!-- Задача 4: Закрытие по Escape -->
+    <!-- Закрытие по Escape -->
     <div class="modal" id="escapeModal">
         <div class="modal-overlay"></div>
         <div class="modal-content">
             <button class="modal-close-btn"><i class="fas fa-times"></i></button>
             <h2><i class="fas fa-keyboard"></i> Окно с закрытием по Escape</h2>
-            <p>Это окно должно закрываться при нажатии клавиши <kbd>Escape</kbd> на клавиатуре, когда оно активно.</p>
+            <p> Можем закрыть окно при нажатии клавиши <kbd>Escape</kbd> на клавиатуре, когда оно активно.</p>
             <div class="modal-footer">
-                <p>Слушатель события <code>keydown</code> на объекте <code>document</code> — ваш друг.</p>
+                <p>Слушатель события <code>keydown</code> на объекте <code>document</code> жестко помог, спасибо.</p>
             </div>
         </div>
     </div>
 
-    <!-- Задача 5: Окно с формой -->
+    <!-- Окно с формой -->
     <div class="modal" id="formModal">
         <div class="modal-overlay"></div>
         <div class="modal-content">
@@ -164,11 +164,8 @@
     </div>
 
     <footer class="footer">
-        <p>Удачи в практике! Помни: весь необходимый HTML и CSS уже есть. Осталось только написать JavaScript.</p>
-        <p class="footer-note">Создано для тренировки работы с DOM. <i class="fas fa-heart"></i></p>
+        <p>Йоу</p>
+        <p class="footer-note">Жесткая практика <i class="fas fa-heart"></i></p>
     </footer>
-
-    <!-- Твой скрипт -->
-    <script src="script.js"></script>
 </body>
 </html>
