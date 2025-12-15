@@ -99,6 +99,46 @@ let btnFormModal = document.querySelector('[data-modal-target="#formModal"]');
 
 let formWindow = document.querySelector("#formModal");
 
+let formElement = formWindow.querySelector("#sampleForm");
+
+let userFormData = {}; // сюда вкладываем то что пользователь ввел
+
+// Вкладываем в переменную значение введенное в поле ввода имени
+
+let windowInputName = formWindow.querySelector("#userName");
+let inputNameValue = "";
+
+windowInputName.addEventListener("input", (event) => {
+
+  inputNameValue = event.target.value;
+  userFormData.userName = inputNameValue;
+
+}); // складываем в переменную то что ввел пользователь
+
+// Вкладываем в переменную значение введеное в поле ввода email
+
+let windowInputEmail = formWindow.querySelector("#userEmail");
+let inputEmailValue = "";
+windowInputEmail.addEventListener("input", (event) => {
+
+  inputEmailValue = event.target.value;
+  userFormData.userEmail = inputEmailValue;
+
+});
+
+// Вкладываем в переменную значение введное в поле ввода сообщение
+
+let windowInputMessage = formWindow.querySelector("#userMessage");
+let inputMassageValue = "";
+windowInputMessage.addEventListener("input", (event) => {
+
+  inputMassageValue = event.target.value;
+  userFormData.userMessage = inputMassageValue; 
+  
+});
+
+
+
 btnFormModal.addEventListener("click", (event) => {
 
   formWindow.style.display = "flex";
@@ -107,6 +147,7 @@ btnFormModal.addEventListener("click", (event) => {
 
   formCloseBtn.addEventListener("click", (event) => {
 
+    console.log(userFormData);
     formWindow.style.display = "none";
 
   });
@@ -114,3 +155,17 @@ btnFormModal.addEventListener("click", (event) => {
 
 });
 
+formElement.addEventListener("submit", (event) => {
+
+  event.preventDefault(); // отмена перезагрузки страницы
+
+  console.log("Имя:", userFormData.userName || "не указано");
+  console.log("Email:", userFormData.userEmail || "не указан");
+  console.log("Сообщение:", userFormData.userMessage || "не указано");
+
+  formWindow.style.display = "none";
+
+  formElement.reset(); // Очищаем форму
+  userFormData = {}; // очищаем объект
+
+});
