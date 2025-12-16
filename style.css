@@ -212,6 +212,7 @@ h1, h2, h3, h4 {
 
 /* ========== СТИЛИ ДЛЯ МОДАЛЬНЫХ ОКОН ========== */
 /* Базовый стиль модального окна (скрыто по умолчанию) */
+
 .modal {
     position: fixed;
     top: 0;
@@ -225,7 +226,31 @@ h1, h2, h3, h4 {
     padding: 20px;
 }
 
-/* Оверлей (фон) */
+/* Окно для 3 задачи - анимированное */
+.modal_anim {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: none; /* Сначала скрываем */
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0; /* Начальная прозрачность */
+    transform: scale(0.9); /* Начальный размер (чуть меньше) */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Плавный переход */
+}
+
+/* Класс для видимого состояния */
+
+.modal_anim.active {
+    opacity: 1; 
+    transform: scale(1); 
+}
+
+/* Фон */
 .modal-overlay {
     position: absolute;
     top: 0;
